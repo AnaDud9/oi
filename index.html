@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>ой😅</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f2f2f2;
+      padding: 2rem;
+      max-width: 600px;
+      margin: auto;
+    }
+    textarea {
+      width: 100%;
+      height: 150px;
+      font-size: 1rem;
+      padding: 0.5rem;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+    }
+    .result {
+      margin-top: 1.5rem;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      min-height: 3rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>ой😅</h1>
+  <p>Ти знову в потоці забув змінити розкладку клавіатури. Чи може отримав зашифроване послання, і тепер не знаєш що з ним робити.</p>
+  <h4>Don't Worry Be Happy</h4>
+  <p>Просто встав сюди текст, написаний англійською розкладкою замість української, і отримай виправлений варіант 👇</p>
+  <textarea id="input" placeholder="ghbdsn"></textarea>
+  <button onclick="convertText()">Творити магію</button>
+  <div class="result" id="output"></div>
+
+  <script>
+    const layoutMap = {
+      'q': 'й', 'w': 'ц', 'e': 'у', 'r': 'к', 't': 'е', 'y': 'н', 'u': 'г', 'i': 'ш', 'o': 'щ', 'p': 'з',
+      '[': 'х', ']': 'ї',
+      'a': 'ф', 's': 'і', 'd': 'в', 'f': 'а', 'g': 'п', 'h': 'р', 'j': 'о', 'k': 'л', 'l': 'д', ';': 'ж', "'": 'є',
+      'z': 'я', 'x': 'ч', 'c': 'с', 'v': 'м', 'b': 'и', 'n': 'т', 'm': 'ь', ',': 'б', '.': 'ю', '/': '.',
+
+      'Q': 'Й', 'W': 'Ц', 'E': 'У', 'R': 'К', 'T': 'Е', 'Y': 'Н', 'U': 'Г', 'I': 'Ш', 'O': 'Щ', 'P': 'З',
+      '{': 'Х', '}': 'Ї',
+      'A': 'Ф', 'S': 'І', 'D': 'В', 'F': 'А', 'G': 'П', 'H': 'Р', 'J': 'О', 'K': 'Л', 'L': 'Д', ':': 'Ж', '"': 'Є',
+      'Z': 'Я', 'X': 'Ч', 'C': 'С', 'V': 'М', 'B': 'И', 'N': 'Т', 'M': 'Ь', '<': 'Б', '>': 'Ю', '?': ',',
+    };
+
+    function convertText() {
+      const input = document.getElementById('input').value;
+      const output = [...input].map(char => layoutMap[char] || char).join('');
+      document.getElementById('output').innerText = output;
+    }
+  </script>
+</body>
+</html>
